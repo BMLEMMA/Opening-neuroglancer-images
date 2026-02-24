@@ -56,6 +56,8 @@ dataset = ts.open({
 #Therefore, we should pick pixel intervals of importance:
 #It is also importnat that we multiply the pixel values we want by two.
 patch = dataset[320553*2:(320553+512)*2, 177054*2:(177054+512)*2, 3667].read().result().transpose()
+#the numbers inputted into "patch" are dependent on the resolution of each segmentation.
+#these images were taken at 8nm, but the raw images are presented at 4nm, so everything has to be multiplied by 2. 
 
 #The next line opens the spec object previously created:
 dataset = ts.open({
